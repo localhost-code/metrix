@@ -1,13 +1,49 @@
-
 <html>
-<head> FORM </head>
+  <title>
+    errorman.org
+  </title>
+   
+
+<!DOCTYPE html>
+<html>
 <body>
-<form action="errorman.org" method="post">
-   <input type="file" name="file" size="30" />
-   <input type="sumit" name="errorman" value="localhost" />
-</form>
+
+<h1>Date and Time</h1>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+</body>
+</html> <p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
 </body>
 </html>
+   
+
 
 
 <html>
